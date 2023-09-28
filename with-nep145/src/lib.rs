@@ -24,8 +24,11 @@ impl Contract {
     }
 
     pub fn mint(&mut self, amount: U128) {
-        self.token
-            .internal_deposit(&env::predecessor_account_id(), amount.into());
+        let account = env::predecessor_account_id();
+        if !self.token.accounts.contains_key(&account) {
+            self.token.internal_register_account(&account);
+        }
+        self.token.internal_deposit(&account, amount.into());
     }
 }
 

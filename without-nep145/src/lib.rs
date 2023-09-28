@@ -26,8 +26,7 @@ impl Contract {
         if !self.token.accounts.contains_key(&account) {
             self.token.internal_register_account(&account);
         }
-        self.token
-            .internal_deposit(&account, amount.into());
+        self.token.internal_deposit(&account, amount.into());
     }
 }
 
