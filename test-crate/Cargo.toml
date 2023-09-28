@@ -1,0 +1,9 @@
+[package]
+name = "test-crate"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+workspaces.workspace = true
+near-sdk.workspace = true
+tokio.workspace = true

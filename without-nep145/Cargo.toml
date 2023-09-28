@@ -1,0 +1,11 @@
+[package]
+name = "without-nep145"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+near-contract-standards.workspace = true
+near-sdk.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
